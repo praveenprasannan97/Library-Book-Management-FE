@@ -36,7 +36,9 @@ function StaffLogin() {
     }
     return(
         <div>
-            <br/><br/><br/>
+            <br/>
+            <Link to={'/'}>Home</Link>
+            <br/>
             <div className="row d-flex justify-content-center mx-auto">
                 <div className="col-lg-6 col-md-8 col-sm-10 col-12">
                     <div className='container-fluid mt-5' id="login-container">

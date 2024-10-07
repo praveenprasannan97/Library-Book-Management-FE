@@ -13,7 +13,6 @@ function CreateStaff() {
     const [pass1, setPass1] = useState("");
     const [pass2, setPass2] = useState("");
     const [is_staff, setIs_staff] = useState(true);
-    console.log(is_staff)
     const registerUser = async () => {
         if (pass1 !== pass2) {
             setErrorMessage("Passwords do not match");
@@ -40,11 +39,11 @@ function CreateStaff() {
 
     return(
         <div>
-            <br/><br/><br/>
+            <br/>
             <div className="row d-flex justify-content-center mx-auto">
                 <div className="col-lg-6 col-md-8 col-sm-10 col-12">
                     <div className='container-fluid mt-5' id="signup-container">
-                            <h1 id="signup-heading">Signup</h1>
+                            <h1 id="signup-heading">Create New Staff</h1>
                             {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
                             <div className="form-group mb-3">
                                 <label class="form-label">Email</label>
@@ -63,8 +62,7 @@ function CreateStaff() {
                                 <input id="signup-ipbg" type="password" value={pass2} onInput={(event) => setPass2(event.target.value)} className="form-control" placeholder='Confirm Password'/>
                             </div>
                             <div className="form-group mb-3">
-                                <button className="btn btn-outline-primary" onClick={registerUser} id="signup-mbtn">Signup</button>
-                                <span>Already have an account? </span><Link to='/login'>Login Here</Link>
+                                <button className="btn btn-outline-primary" onClick={registerUser} id="signup-mbtn">Create</button>
                             </div>
                     </div>
                 </div>

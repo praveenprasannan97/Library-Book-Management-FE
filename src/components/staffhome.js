@@ -11,22 +11,31 @@ function StaffHome(){
     const navigate = useNavigate();
     function authlogout() {
         if(user){
-            axios.post('http://127.0.0.1:8000/api/logout',{},{headers:{'Authorization':"Token "+ user.token}});
+            axios.post('http://127.0.0.1:8000/api/logout/',{},{headers:{'Authorization':"Token "+ user.token}});
             dispatch(removeUser());
-            navigate('/login');
+            navigate('/stafflogin');
         }
     }
     
 
     return(
         <div>
+            <br/>
             <Link className="nav-link text-white ms-3" onClick={authlogout}>Logout</Link>
-            <br/>
+            <br/><br/>
             <Link to={'/createstaff'}>Create Staff</Link>
-            <br/>
+            <br/><br/>
             <Link to={'/addauthor'}>Add Author</Link>
-            <br/>
+            <br/><br/>
             <Link to={'/listauthor'}>List Author</Link>
+            <br/><br/>
+            <Link to={'/viewprofile'}>View Profile</Link>
+            <br/><br/>
+            <Link to={'/addbook'}>Add Book</Link>
+            <br/><br/>
+            <Link to={'/stafflistbook'}>List Book</Link>
+            <br/><br/>
+            <Link to={'/allborrowinghistory'}>All Borrowing History</Link>
 
         </div>
     );

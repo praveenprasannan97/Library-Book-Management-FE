@@ -40,9 +40,10 @@ function AuthorList() {
     return (
         <div>
             <h2>Authors List</h2>
-            <table>
+            <table border="1">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -51,6 +52,7 @@ function AuthorList() {
                 <tbody>
                     {authors.map((author) => (
                         <tr key={author.id}>
+                            <td>{author.id}</td>
                             <td>{author.name}</td>
                             <td>
                                 <button onClick={() => handleEdit(author.id)}>Edit</button>
